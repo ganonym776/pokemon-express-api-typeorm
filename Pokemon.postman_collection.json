@@ -1,0 +1,1121 @@
+{
+	"info": {
+		"_postman_id": "e212fbab-eb0c-4b15-82c2-a31f87d998c7",
+		"name": "Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23115217"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"admin\",\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/user/register",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"admin\",\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-64t+tkzw3A2g5m0tORlk9yFWbzI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:51:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil membuat akun\"\n}"
+				},
+				{
+					"name": "Failed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nama\": \"prasetya\",\n    \"username\": \"prasetya\",\n    \"password\": \"prasetya\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "70"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"46-i41x8PQ/tk44bGpaUh+T9b9bMSM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:51:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": false,\n    \"message\": \"Key (username)=(prasetya) already exists.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"Token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"gunawan\",\n    \"password\":\"gunawan\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/user/login",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"gunawan\",\n    \"password\":\"gunawan\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-nD0z5bgfvR17AlEz3UIg/AAAuYc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:49:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"user_id\": \"1afca0dd-a5ff-47c8-8dae-acf9ab870b7b\",\n    \"user_name\": \"gunawan\",\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFhZmNhMGRkLWE1ZmYtNDdjOC04ZGFlLWFjZjlhYjg3MGI3YiIsImlhdCI6MTY3OTE1NDU0NCwiZXhwIjoxNjc5MTY1MzQ0fQ.F1oe5oqUg9EhTSsvSMoFL71TTpZX1mwiyzfahIn56kQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get User",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/api/user/profile",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/user/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-FhmvL0+sjLt59gmlrzAwpeJnUlI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 16:11:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"messgae\": \"profil didapatkan\",\n    \"data\": [\n        {\n            \"id\": \"1afca0dd-a5ff-47c8-8dae-acf9ab870b7b\",\n            \"nama\": \"gunawan\",\n            \"created_at\": \"2023-03-18T01:21:01.527Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "list poke",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/list/?limit=5&page=2",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"list",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/pokemon/list/?limit=5&page=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pokemon",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"44d-IdubP6UzzssVK/xYA/xI22IYWIQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:52:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 6,\n                \"url\": \"https://pokeapi.co/api/v2/pokemon/6/\",\n                \"name\": \"charizard\",\n                \"types\": [\n                    \"fire\",\n                    \"flying\"\n                ],\n                \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/6.svg\"\n            },\n            {\n                \"id\": 7,\n                \"url\": \"https://pokeapi.co/api/v2/pokemon/7/\",\n                \"name\": \"squirtle\",\n                \"types\": [\n                    \"water\"\n                ],\n                \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg\"\n            },\n            {\n                \"id\": 8,\n                \"url\": \"https://pokeapi.co/api/v2/pokemon/8/\",\n                \"name\": \"wartortle\",\n                \"types\": [\n                    \"water\"\n                ],\n                \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/8.svg\"\n            },\n            {\n                \"id\": 9,\n                \"url\": \"https://pokeapi.co/api/v2/pokemon/9/\",\n                \"name\": \"blastoise\",\n                \"types\": [\n                    \"water\"\n                ],\n                \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/9.svg\"\n            },\n            {\n                \"id\": 10,\n                \"url\": \"https://pokeapi.co/api/v2/pokemon/10/\",\n                \"name\": \"caterpie\",\n                \"types\": [\n                    \"bug\"\n                ],\n                \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/10.svg\"\n            }\n        ],\n        \"limit\": \"5\",\n        \"offset\": 5,\n        \"page\": \"2\",\n        \"total_page\": 257\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "detail poke",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/detail/:name",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"detail",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "blastoise"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/api/pokemon/detail/:name",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"api",
+								"pokemon",
+								"detail",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "blastoise"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2913"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b61-ib2payuCOgC1iGcQZaQALEYfnhM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 17:34:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"id\": 9,\n        \"url\": \"https://pokeapi.co/api/v2/pokemon/blastoise\",\n        \"name\": \"blastoise\",\n        \"types\": [\n            \"water\"\n        ],\n        \"image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/9.svg\",\n        \"types_detail\": [\n            {\n                \"name\": \"water\",\n                \"damage_relations\": {\n                    \"no_damage_to\": [],\n                    \"half_damage_to\": [\n                        {\n                            \"name\": \"water\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/11/\"\n                        },\n                        {\n                            \"name\": \"grass\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/12/\"\n                        },\n                        {\n                            \"name\": \"dragon\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/16/\"\n                        }\n                    ],\n                    \"double_damage_to\": [\n                        {\n                            \"name\": \"ground\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/5/\"\n                        },\n                        {\n                            \"name\": \"rock\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/6/\"\n                        },\n                        {\n                            \"name\": \"fire\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/10/\"\n                        }\n                    ],\n                    \"no_damage_from\": [],\n                    \"half_damage_from\": [\n                        {\n                            \"name\": \"steel\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/9/\"\n                        },\n                        {\n                            \"name\": \"fire\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/10/\"\n                        },\n                        {\n                            \"name\": \"water\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/11/\"\n                        },\n                        {\n                            \"name\": \"ice\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/15/\"\n                        }\n                    ],\n                    \"double_damage_from\": [\n                        {\n                            \"name\": \"grass\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/12/\"\n                        },\n                        {\n                            \"name\": \"electric\",\n                            \"url\": \"https://pokeapi.co/api/v2/type/13/\"\n                        }\n                    ]\n                },\n                \"move_damage_class\": \"special\"\n            }\n        ],\n        \"abilities\": [\n            {\n                \"name\": \"torrent\",\n                \"effect_changes\": null,\n                \"effect_entries\": \"When this Pokémon has 1/3 or less of its HP remaining, its water-type moves inflict 1.5× as much regular damage.\",\n                \"short_effect\": \"Strengthens water moves to inflict 1.5× damage at 1/3 max HP or less.\"\n            },\n            {\n                \"name\": \"rain-dish\",\n                \"effect_changes\": null,\n                \"effect_entries\": \"This Pokémon heals for 1/16 of its maximum HP after each turn during rain.\",\n                \"short_effect\": \"Heals for 1/16 max HP after each turn during rain.\"\n            }\n        ],\n        \"top_moves\": [\n            {\n                \"name\": \"mega-punch\",\n                \"accuracy\": 85,\n                \"effect_chance\": null,\n                \"pp\": 20,\n                \"priority\": 0,\n                \"power\": 80,\n                \"contest_combos\": {\n                    \"normal\": {\n                        \"use_before\": [],\n                        \"use_after\": [\n                            {\n                                \"name\": \"focus-energy\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/116/\"\n                            },\n                            {\n                                \"name\": \"mind-reader\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/170/\"\n                            }\n                        ]\n                    },\n                    \"super\": {\n                        \"use_before\": [],\n                        \"use_after\": []\n                    }\n                },\n                \"contest_type\": \"tough\",\n                \"damage_class\": \"physical\"\n            },\n            {\n                \"name\": \"ice-punch\",\n                \"accuracy\": 100,\n                \"effect_chance\": 10,\n                \"pp\": 15,\n                \"priority\": 0,\n                \"power\": 75,\n                \"contest_combos\": {\n                    \"normal\": {\n                        \"use_before\": [\n                            {\n                                \"name\": \"fire-punch\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/7/\"\n                            },\n                            {\n                                \"name\": \"thunder-punch\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/9/\"\n                            }\n                        ],\n                        \"use_after\": [\n                            {\n                                \"name\": \"fire-punch\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/7/\"\n                            },\n                            {\n                                \"name\": \"thunder-punch\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/9/\"\n                            }\n                        ]\n                    },\n                    \"super\": {\n                        \"use_before\": [],\n                        \"use_after\": []\n                    }\n                },\n                \"contest_type\": \"beauty\",\n                \"damage_class\": \"physical\"\n            },\n            {\n                \"name\": \"mega-kick\",\n                \"accuracy\": 75,\n                \"effect_chance\": null,\n                \"pp\": 5,\n                \"priority\": 0,\n                \"power\": 120,\n                \"contest_combos\": {\n                    \"normal\": {\n                        \"use_before\": [],\n                        \"use_after\": [\n                            {\n                                \"name\": \"focus-energy\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/116/\"\n                            },\n                            {\n                                \"name\": \"mind-reader\",\n                                \"url\": \"https://pokeapi.co/api/v2/move/170/\"\n                            }\n                        ]\n                    },\n                    \"super\": {\n                        \"use_before\": [],\n                        \"use_after\": []\n                    }\n                },\n                \"contest_type\": \"cool\",\n                \"damage_class\": \"physical\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "my List",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/mylist",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"mylist"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/pokemon/mylist",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pokemon",
+								"mylist"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "788"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"314-tPjblHT5sb9WdazSjhM0tijLaYc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:01:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"List didapatkan\",\n    \"data\": [\n        {\n            \"id\": \"a819f34f-5bee-4348-9959-6a74056d7c6d\",\n            \"user_id\": \"1afca0dd-a5ff-47c8-8dae-acf9ab870b7b\",\n            \"poke_id\": \"3\",\n            \"poke_init_name\": \"venusaur\",\n            \"poke_name\": \"venusaur\",\n            \"poke_image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg\",\n            \"caught_at\": \"2023-03-18T14:59:54.939Z\",\n            \"release_at\": \"2023-03-18T14:59:54.939Z\",\n            \"name_changed\": 0\n        },\n        {\n            \"id\": \"b45f6d17-8f34-4b43-8bb4-df98711d33ec\",\n            \"user_id\": \"1afca0dd-a5ff-47c8-8dae-acf9ab870b7b\",\n            \"poke_id\": \"3\",\n            \"poke_init_name\": \"venusaur\",\n            \"poke_name\": \"venusaur\",\n            \"poke_image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg\",\n            \"caught_at\": \"2023-03-18T15:00:35.574Z\",\n            \"release_at\": \"2023-03-18T15:00:35.574Z\",\n            \"name_changed\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "catch Pokemon",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pokeId\": \"6\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/catch",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"catch"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/pokemon/catch",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pokemon",
+								"catch"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "465"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d1-ab+0/tJs2SAvdeswADhXhey7xDE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:00:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil mendapatkan pokemon\",\n    \"data\": {\n        \"success\": true,\n        \"gatcha_number\": 80,\n        \"user_id\": \"1afca0dd-a5ff-47c8-8dae-acf9ab870b7b\",\n        \"poke_id\": \"3\",\n        \"poke_init_name\": \"venusaur\",\n        \"poke_name\": \"venusaur\",\n        \"poke_image\": \"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg\",\n        \"name_changed\": 0,\n        \"id\": \"b45f6d17-8f34-4b43-8bb4-df98711d33ec\",\n        \"caught_at\": \"2023-03-18T15:00:35.574Z\",\n        \"release_at\": \"2023-03-18T15:00:35.574Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "release Pokemon",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"32052bd0-5130-40b3-bbd9-05b1c15d6aba\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/release",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"release"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":\"a819f34f-5bee-4348-9959-6a74056d7c6d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/pokemon/release",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pokemon",
+								"release"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-8EnG+rEOxZuPFJ+Pp0gqqfvuXkk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:32:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Berhasil melepas pokemon\",\n    \"data\": {\n        \"gatcha_number\": 11,\n        \"is_prime\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "rename Pokemon",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"a819f34f-5bee-4348-9959-6a74056d7c6d\",\n    \"new_name\": \"pokepokemon\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/cname",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"cname"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"a819f34f-5bee-4348-9959-6a74056d7c6d\",\n    \"new_name\": \"pokepokemon\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/pokemon/cname",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pokemon",
+								"cname"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-GMKjCq3GwWvdWvuhD+wbm9tXE0s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 15:45:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Pokemon venusaur anda berganti nama pokepokemon-5 => pokepokemon-8\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get poke Moves",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/moves/:name",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"moves",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "focus-energy"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/api/pokemon/moves/:name",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"api",
+								"pokemon",
+								"moves",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "focus-energy"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2125"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"84d-9Z5OYnbsJ/dOVf1SycMONPfwxLk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 17:49:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"name\": \"focus-energy\",\n        \"accuracy\": null,\n        \"effect_chance\": null,\n        \"pp\": 30,\n        \"priority\": 0,\n        \"power\": null,\n        \"contest_combos\": {\n            \"normal\": {\n                \"use_before\": [\n                    {\n                        \"name\": \"karate-chop\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/2/\"\n                    },\n                    {\n                        \"name\": \"mega-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/5/\"\n                    },\n                    {\n                        \"name\": \"mega-kick\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/25/\"\n                    },\n                    {\n                        \"name\": \"headbutt\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/29/\"\n                    },\n                    {\n                        \"name\": \"take-down\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/36/\"\n                    },\n                    {\n                        \"name\": \"double-edge\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/38/\"\n                    },\n                    {\n                        \"name\": \"triple-kick\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/167/\"\n                    },\n                    {\n                        \"name\": \"bone-rush\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/198/\"\n                    },\n                    {\n                        \"name\": \"dynamic-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/223/\"\n                    },\n                    {\n                        \"name\": \"cross-chop\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/238/\"\n                    },\n                    {\n                        \"name\": \"focus-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/264/\"\n                    },\n                    {\n                        \"name\": \"brick-break\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/280/\"\n                    },\n                    {\n                        \"name\": \"arm-thrust\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/292/\"\n                    },\n                    {\n                        \"name\": \"sky-uppercut\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/327/\"\n                    }\n                ],\n                \"use_after\": []\n            },\n            \"super\": {\n                \"use_before\": [\n                    {\n                        \"name\": \"karate-chop\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/2/\"\n                    },\n                    {\n                        \"name\": \"mega-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/5/\"\n                    },\n                    {\n                        \"name\": \"mega-kick\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/25/\"\n                    },\n                    {\n                        \"name\": \"headbutt\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/29/\"\n                    },\n                    {\n                        \"name\": \"take-down\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/36/\"\n                    },\n                    {\n                        \"name\": \"double-edge\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/38/\"\n                    },\n                    {\n                        \"name\": \"triple-kick\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/167/\"\n                    },\n                    {\n                        \"name\": \"bone-rush\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/198/\"\n                    },\n                    {\n                        \"name\": \"dynamic-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/223/\"\n                    },\n                    {\n                        \"name\": \"cross-chop\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/238/\"\n                    },\n                    {\n                        \"name\": \"focus-punch\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/264/\"\n                    },\n                    {\n                        \"name\": \"brick-break\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/280/\"\n                    },\n                    {\n                        \"name\": \"arm-thrust\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/292/\"\n                    },\n                    {\n                        \"name\": \"sky-uppercut\",\n                        \"url\": \"https://pokeapi.co/api/v2/move/327/\"\n                    }\n                ],\n                \"use_after\": []\n            }\n        },\n        \"contest_type\": \"cool\",\n        \"damage_class\": \"status\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get poke types",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/api/pokemon/types/:name",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"api",
+						"pokemon",
+						"types",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "water"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/api/pokemon/types/:name",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"api",
+								"pokemon",
+								"types",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "water"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "949"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b5-628oEA9C/IsA6cNb9LjgHyzU3T8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 17:35:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"name\": \"water\",\n        \"damage_relations\": {\n            \"no_damage_to\": [],\n            \"half_damage_to\": [\n                {\n                    \"name\": \"water\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/11/\"\n                },\n                {\n                    \"name\": \"grass\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/12/\"\n                },\n                {\n                    \"name\": \"dragon\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/16/\"\n                }\n            ],\n            \"double_damage_to\": [\n                {\n                    \"name\": \"ground\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/5/\"\n                },\n                {\n                    \"name\": \"rock\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/6/\"\n                },\n                {\n                    \"name\": \"fire\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/10/\"\n                }\n            ],\n            \"no_damage_from\": [],\n            \"half_damage_from\": [\n                {\n                    \"name\": \"steel\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/9/\"\n                },\n                {\n                    \"name\": \"fire\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/10/\"\n                },\n                {\n                    \"name\": \"water\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/11/\"\n                },\n                {\n                    \"name\": \"ice\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/15/\"\n                }\n            ],\n            \"double_damage_from\": [\n                {\n                    \"name\": \"grass\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/12/\"\n                },\n                {\n                    \"name\": \"electric\",\n                    \"url\": \"https://pokeapi.co/api/v2/type/13/\"\n                }\n            ]\n        },\n        \"move_damage_class\": \"special\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
